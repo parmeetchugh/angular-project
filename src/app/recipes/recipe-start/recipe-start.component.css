@@ -1,0 +1,11 @@
+#bg {
+  height: 100%;
+  width: 100%;
+  background-color:rgb(194, 218, 190);
+  clip-path: polygon(0 0, 100% 0, 90% 32%, 100% 67%, 90% 100%, 0 100%, 0% 80%, 0% 20%);
+  position: relative;
+  z-index: -2;
+}
+h1{
+  font-family: 'Pirata One', cursive;
+}

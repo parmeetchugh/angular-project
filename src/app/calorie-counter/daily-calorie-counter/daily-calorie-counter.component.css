@@ -1,0 +1,16 @@
+h1,h2{
+  font-family: 'Pirata One', cursive;
+}
+#bg {
+  height: 100%;
+  width: 100%;
+  background-color:rgb(194, 218, 190);
+  clip-path: polygon(100% 0, 96% 19%, 100% 48%, 95% 75%, 100% 100%, 68% 100%, 0 100%, 0 0);
+  position: relative;
+  z-index: -2;
+}
+table{
+  background-color:rgb(196, 184, 193);
+}
+
+

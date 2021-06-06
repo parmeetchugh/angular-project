@@ -1,0 +1,106 @@
+<div class="container">
+    <div class="row" >
+        <div class="col-sm-12" >
+            <h1 class="danger" id="bg">How Many Calories Should You Eat per Day to Lose/Gain Weight?</h1>
+
+            <h2 class="text-warning">First Understand about Calorie! </h2>
+            <h3 id="bg">Calorie is just a number; source of energy! It comes form
+                Protien | Carb | FAT | Sugar
+            </h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 card" >
+            <div *ngIf="!foodCaloriesCounted">
+                <form [formGroup]="foodCalorieCounterForm">
+                    <fieldset>
+                        <legend>Calculate Calories from food:</legend>
+                        <div class="form-group">
+                            <input type="number" formControlName="protien" class="form-control"
+                                placeholder="Enter Protien in grams">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" formControlName="carb" class="form-control"
+                                placeholder="Enter Carb in grams">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" formControlName="fat" class="form-control"
+                                placeholder="Enter Fat in grams">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" formControlName="sugar" class="form-control"
+                                placeholder="Enter Sugar in grams">
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <button [disabled]="!foodCalorieCounterForm.valid" type="button"
+                                    (click)="calculateCalories()" class="btn btn-success">Calculate</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <button type="button" class="btn btn-primary" (click)="restForm()">Reset</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <span *ngIf="foodCaloriesCounted" class="text-success">
+                        <h1>{{foodCalculatedCalories}} Calories </h1>
+                    </span>
+                </div>
+                <div class="col-xs-6">
+                    <button type="button" class="btn btn-primary" (click)="restForm()"
+                        *ngIf="foodCaloriesCounted">Refresh</button>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="col-lg-offset-1 col-lg-5 col-sm-6 table-responsive">
+            <table class="table table-hover">
+                <caption>Calories per gram </caption>
+                <thead>
+                    <tr>
+                        <th>Source</th>
+                        <th>grams</th>
+                        <th>calories</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Protien</th>
+                        <td>1gm</td>
+                        <td>4 calories</td>
+                    </tr>
+                    <tr>
+                        <th>Carb</th>
+                        <td>1gm</td>
+                        <td>4 calories</td>
+                    </tr>
+                    <tr>
+                        <th>Fat</th>
+                        <td>1gm</td>
+                        <td>9 calories</td>
+                    </tr>
+                    <tr>
+                        <th>Sugar</th>
+                        <td>1gm</td>
+                        <td>4.2 calories</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+
+</div>
